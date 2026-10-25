@@ -1,0 +1,22 @@
+{
+  "name": "job-hunting",
+  "displayName": "Job Hunting",
+  "version": "1.0.0",
+  "description": "Build a master career profile, tailor ATS-optimized CVs to each job description for your target country, and keep a history of every tailored CV.",
+  "author": {
+    "name": "Kelvin Wong",
+    "url": "https://github.com/klcwong"
+  },
+  "homepage": "https://github.com/klcwong/job-hunting",
+  "repository": "https://github.com/klcwong/job-hunting",
+  "license": "MIT",
+  "keywords": ["job-search", "cv", "resume", "ats", "career"],
+  "userConfig": {
+    "data_dir": {
+      "type": "string",
+      "title": "Data folder",
+      "description": "Folder for your profile, tailored CVs and application history. Pick a folder you back up. It is kept if the plugin is uninstalled.",
+      "default": "~/job-hunting"
+    }
+  }
+}

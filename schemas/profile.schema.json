@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Job hunting master profile (profile.json)",
+  "description": "Single source of truth for everything the candidate has done. Tailored CVs only ever select and rephrase facts from here.",
+  "type": "object",
+  "required": ["schemaVersion", "meta", "targetMarkets", "personal", "experience", "education", "skills"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "meta": {
+      "type": "object",
+      "required": ["version", "updatedAt"],
+      "properties": {
+        "version": { "type": "integer", "minimum": 1 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "sourceFiles": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "targetMarkets": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/market" } },
+    "targetRoles": { "type": "array", "items": { "type": "string" } },
+    "personal": { "$ref": "#/$defs/personal" },
+    "summary": { "type": "string" },
+    "experience": { "type": "array", "items": { "$ref": "#/$defs/position" } },
+    "education": { "type": "array", "items": { "$ref": "#/$defs/education" } },
+    "skills": { "type": "array", "items": { "$ref": "#/$defs/skill" } },
+    "certifications": { "type": "array", "items": { "$ref": "#/$defs/certification" } },
+    "projects": { "type": "array", "items": { "$ref": "#/$defs/project" } },
+    "languages": { "type": "array", "items": { "$ref": "#/$defs/language" } },
+    "awards": { "type": "array", "items": { "$ref": "#/$defs/award" } },
+    "publications": { "type": "array", "items": { "$ref": "#/$defs/publication" } },
+    "volunteering": { "type": "array", "items": { "$ref": "#/$defs/position" } },
+    "additional": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "text"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "label": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "targetPages": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "includePhoto": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "date": { "type": "string", "pattern": "^\\d{4}(-(0[1-9]|1[0-2]))?$" },
+    "endDate": { "oneOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+    "market": {
+      "type": "object",
+      "required": ["code", "country", "cvLanguage", "paper"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "country": { "type": "string" },
+        "primary": { "type": "boolean" },
+        "cvLanguage": { "type": "string", "minLength": 2 },
+        "paper": { "enum": ["A4", "Letter"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "personal": {
+      "type": "object",
+      "required": ["fullName", "email"],
+      "properties": {
+        "fullName": { "type": "string", "minLength": 1 },
+        "displayName": { "type": "string" },
+        "localName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "location": { "type": "string" },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "url"],
+            "properties": { "label": { "type": "string" }, "url": { "type": "string" } }
+          }
+        },
+        "workAuthorization": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["code", "status"],
+            "properties": {
+              "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+              "status": { "type": "string" }
+            }
+          }
+        },
+        "regional": {
+          "description": "Market-specific details the user chose to share, e.g. noticePeriod, expectedSalary, nationality, dateOfBirth.",
+          "type": "object",
+          "additionalProperties": { "type": ["string", "number", "boolean", "null"] }
+        }
+      }
+    },
+    "achievement": {
+      "type": "object",
+      "required": ["id", "text"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "text": { "type": "string", "minLength": 1 },
+        "original": { "type": "string" },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "confirmed": { "type": "boolean" }
+      }
+    },
+    "position": {
+      "type": "object",
+      "required": ["id", "title", "organization", "start"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "organization": { "type": "string" },
+        "location": { "type": "string" },
+        "employmentType": { "type": "string" },
+        "start": { "$ref": "#/$defs/date" },
+        "end": { "$ref": "#/$defs/endDate" },
+        "context": { "type": "string" },
+        "achievements": { "type": "array", "items": { "$ref": "#/$defs/achievement" } }
+      }
+    },
+    "education": {
+      "type": "object",
+      "required": ["id", "institution"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "institution": { "type": "string" },
+        "qualification": { "type": "string" },
+        "field": { "type": "string" },
+        "location": { "type": "string" },
+        "start": { "$ref": "#/$defs/date" },
+        "end": { "$ref": "#/$defs/endDate" },
+        "grade": { "type": "string" },
+        "highlights": { "type": "array", "items": { "$ref": "#/$defs/achievement" } }
+      }
+    },
+    "skill": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "level": { "type": "string" },
+        "years": { "type": "number", "minimum": 0 },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "issuer": { "type": "string" },
+        "date": { "$ref": "#/$defs/date" },
+        "expires": { "$ref": "#/$defs/endDate" },
+        "url": { "type": "string" }
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "url": { "type": "string" },
+        "start": { "$ref": "#/$defs/date" },
+        "end": { "$ref": "#/$defs/endDate" },
+        "description": { "type": "string" },
+        "highlights": { "type": "array", "items": { "$ref": "#/$defs/achievement" } },
+        "skills": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "language": {
+      "type": "object",
+      "required": ["id", "language", "proficiency"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "language": { "type": "string" },
+        "proficiency": { "type": "string" }
+      }
+    },
+    "award": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "issuer": { "type": "string" },
+        "date": { "$ref": "#/$defs/date" },
+        "description": { "type": "string" }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "required": ["id", "title"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "venue": { "type": "string" },
+        "date": { "$ref": "#/$defs/date" },
+        "url": { "type": "string" }
+      }
+    }
+  }
+}

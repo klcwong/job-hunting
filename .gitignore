@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.venv/
+# Local test output. Real user data lives in the data folder (default ~/job-hunting), never in this repo.
+.test-output/

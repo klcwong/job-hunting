@@ -1,0 +1,11 @@
+[
+  { "term": "product roadmap", "aliases": ["roadmap"], "priority": "must" },
+  { "term": "payments", "priority": "must" },
+  { "term": "SQL", "priority": "must" },
+  { "term": "A/B testing", "aliases": ["A/B tests"], "priority": "must" },
+  { "term": "stakeholder management", "aliases": ["managed stakeholders"], "priority": "must" },
+  { "term": "KYC", "aliases": ["Know Your Customer"], "priority": "nice" },
+  { "term": "Agile", "aliases": ["Scrum"], "priority": "nice" },
+  { "term": "API", "priority": "nice" },
+  { "term": "Kubernetes", "priority": "nice" }
+]

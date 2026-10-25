@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "version": 1,
+    "createdAt": "2026-10-25T10:00:00+08:00",
+    "updatedAt": "2026-10-25T10:00:00+08:00",
+    "sourceFiles": ["sources/20261025-100000_alex-chan-cv.pdf"]
+  },
+  "targetMarkets": [
+    {
+      "code": "HK",
+      "country": "Hong Kong",
+      "primary": true,
+      "cvLanguage": "en-GB",
+      "paper": "A4",
+      "notes": "Fintechs and multinational banks; English CV."
+    }
+  ],
+  "targetRoles": ["Senior Product Manager", "Product Lead"],
+  "personal": {
+    "fullName": "Alex Chan Tai-man",
+    "displayName": "Alex Chan",
+    "localName": "陳大文",
+    "email": "alex.chan@example.com",
+    "phone": "+852 5555 0123",
+    "location": "Hong Kong",
+    "links": [{ "label": "LinkedIn", "url": "linkedin.com/in/alexchan-example" }],
+    "workAuthorization": [{ "code": "HK", "status": "Hong Kong permanent resident" }],
+    "regional": {
+      "noticePeriod": "1 month",
+      "expectedSalary": "HK$75,000 per month"
+    }
+  },
+  "summary": "Product manager with 7 years in B2B fintech and e-commerce, strongest in turning customer research and data into shipped roadmaps.",
+  "experience": [
+    {
+      "id": "exp-payflow",
+      "title": "Senior Product Manager",
+      "organization": "PayFlow Ltd",
+      "location": "Hong Kong",
+      "employmentType": "Full-time",
+      "start": "2022-04",
+      "end": null,
+      "context": "Series C B2B payments start-up, about 300 staff.",
+      "achievements": [
+        {
+          "id": "exp-payflow-1",
+          "text": "Led a cross-functional squad of 9 engineers and 2 designers to rebuild merchant onboarding, cutting average onboarding time from 5 days to 1 day.",
+          "original": "Led onboarding revamp project.",
+          "skills": ["Product discovery", "Agile"],
+          "confirmed": true
+        },
+        {
+          "id": "exp-payflow-2",
+          "text": "Defined product KPIs and built SQL and Looker dashboards, then used them to steer the roadmap that grew monthly active merchants by 38% in 12 months.",
+          "skills": ["SQL", "Looker", "Product roadmap"],
+          "confirmed": true
+        },
+        {
+          "id": "exp-payflow-3",
+          "text": "Ran 20+ A/B tests on the payments API developer portal, lifting developer sign-up conversion by 12%.",
+          "skills": ["A/B testing", "API products"],
+          "confirmed": true
+        },
+        {
+          "id": "exp-payflow-4",
+          "text": "Partnered with Compliance and Risk to ship KYC checks aligned with HKMA guidance without slipping the quarterly roadmap.",
+          "skills": ["Stakeholder management", "KYC"],
+          "confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "exp-shopwave",
+      "title": "Product Manager",
+      "organization": "ShopWave",
+      "location": "Hong Kong",
+      "employmentType": "Full-time",
+      "start": "2019-06",
+      "end": "2022-03",
+      "achievements": [
+        {
+          "id": "exp-shopwave-1",
+          "text": "Owned the seller dashboard roadmap for 15,000 SME merchants, prioritising features through customer interviews and usage data.",
+          "skills": ["Product roadmap", "Customer research"],
+          "confirmed": true
+        },
+        {
+          "id": "exp-shopwave-2",
+          "text": "Launched a bilingual (Traditional Chinese and English) seller app, raising weekly active sellers by 22%.",
+          "skills": ["Mobile apps", "Localisation"],
+          "confirmed": true
+        },
+        {
+          "id": "exp-shopwave-3",
+          "text": "Introduced quarterly OKRs and a lightweight PRD template that 4 product teams adopted.",
+          "skills": ["OKRs", "PRD writing"],
+          "confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "exp-gba",
+      "title": "Business Analyst",
+      "organization": "Global Bank Asia",
+      "location": "Hong Kong",
+      "employmentType": "Full-time",
+      "start": "2017-07",
+      "end": "2019-05",
+      "achievements": [
+        {
+          "id": "exp-gba-1",
+          "text": "Gathered requirements from 6 business units and wrote user stories for a mobile banking release used by more than 1 million customers.",
+          "skills": ["Requirements gathering", "User stories"],
+          "confirmed": true
+        },
+        {
+          "id": "exp-gba-2",
+          "text": "Automated weekly management reporting with Python, saving 6 analyst hours per week.",
+          "skills": ["Python", "Automation"],
+          "confirmed": true
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-hku",
+      "institution": "The University of Hong Kong",
+      "qualification": "Bachelor of Business Administration",
+      "field": "Information Systems",
+      "location": "Hong Kong",
+      "start": "2013-09",
+      "end": "2017-06",
+      "grade": "First Class Honours",
+      "highlights": []
+    }
+  ],
+  "skills": [
+    { "id": "skill-roadmap", "name": "Product roadmap", "category": "Product", "evidence": ["exp-payflow-2", "exp-shopwave-1"] },
+    { "id": "skill-discovery", "name": "Product discovery", "category": "Product", "evidence": ["exp-payflow-1"] },
+    { "id": "skill-ab", "name": "A/B testing", "category": "Product", "evidence": ["exp-payflow-3"] },
+    { "id": "skill-okr", "name": "OKRs", "category": "Product", "evidence": ["exp-shopwave-3"] },
+    { "id": "skill-sql", "name": "SQL", "category": "Data", "level": "Advanced", "evidence": ["exp-payflow-2"] },
+    { "id": "skill-looker", "name": "Looker", "category": "Data", "evidence": ["exp-payflow-2"] },
+    { "id": "skill-python", "name": "Python", "category": "Data", "level": "Intermediate", "evidence": ["exp-gba-2"] },
+    { "id": "skill-jira", "name": "Jira", "category": "Tools" },
+    { "id": "skill-figma", "name": "Figma", "category": "Tools" },
+    { "id": "skill-agile", "name": "Agile / Scrum", "category": "Delivery", "evidence": ["exp-payflow-1"] },
+    { "id": "skill-stakeholder", "name": "Stakeholder management", "category": "Delivery", "evidence": ["exp-payflow-4"] },
+    { "id": "skill-payments", "name": "Payments", "category": "Domain", "evidence": ["exp-payflow-3", "exp-payflow-4"] },
+    { "id": "skill-kyc", "name": "KYC", "category": "Domain", "evidence": ["exp-payflow-4"] }
+  ],
+  "certifications": [
+    { "id": "cert-cspo", "name": "Certified Scrum Product Owner (CSPO)", "issuer": "Scrum Alliance", "date": "2021-05" }
+  ],
+  "projects": [],
+  "languages": [
+    { "id": "lang-en", "language": "English", "proficiency": "Fluent" },
+    { "id": "lang-yue", "language": "Cantonese", "proficiency": "Native" },
+    { "id": "lang-cmn", "language": "Mandarin", "proficiency": "Professional working proficiency" }
+  ],
+  "awards": [],
+  "publications": [],
+  "volunteering": [],
+  "additional": [],
+  "preferences": { "targetPages": 2, "includePhoto": false }
+}

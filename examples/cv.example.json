@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "language": "en-GB",
+    "paper": "A4",
+    "market": "HK",
+    "targetPages": 2,
+    "title": "Alex Chan - Senior Product Manager, Payments"
+  },
+  "header": {
+    "name": "Alex Chan",
+    "headline": "Senior Product Manager | Payments & B2B Fintech",
+    "contact": ["alex.chan@example.com", "+852 5555 0123", "Hong Kong", "linkedin.com/in/alexchan-example"],
+    "details": ["Hong Kong permanent resident", "Notice period: 1 month"]
+  },
+  "sections": [
+    {
+      "kind": "text",
+      "title": "Professional Summary",
+      "text": "Senior product manager with 7 years in payments, B2B fintech and e-commerce. Owns product roadmaps end to end, from customer discovery and SQL-based analysis to A/B testing and launch, and works closely with Compliance and Risk on regulated features such as KYC."
+    },
+    {
+      "kind": "entries",
+      "title": "Experience",
+      "entries": [
+        {
+          "heading": "Senior Product Manager",
+          "subheading": "PayFlow Ltd",
+          "location": "Hong Kong",
+          "dates": "Apr 2022 – Present",
+          "source": ["exp-payflow"],
+          "bullets": [
+            { "text": "Own the payments product roadmap, defining KPIs and SQL/Looker dashboards that guided a 38% increase in monthly active merchants in 12 months.", "source": ["exp-payflow-2"] },
+            { "text": "Led a cross-functional Agile squad of 9 engineers and 2 designers to rebuild merchant onboarding, cutting average onboarding time from 5 days to 1 day.", "source": ["exp-payflow-1"] },
+            { "text": "Ran 20+ A/B tests on the payments API developer portal, lifting developer sign-up conversion by 12%.", "source": ["exp-payflow-3"] },
+            { "text": "Managed stakeholders across Compliance and Risk to ship KYC checks aligned with HKMA guidance without slipping the quarterly roadmap.", "source": ["exp-payflow-4"] }
+          ]
+        },
+        {
+          "heading": "Product Manager",
+          "subheading": "ShopWave",
+          "location": "Hong Kong",
+          "dates": "Jun 2019 – Mar 2022",
+          "source": ["exp-shopwave"],
+          "bullets": [
+            { "text": "Owned the seller dashboard product roadmap for 15,000 SME merchants, prioritising features through customer interviews and usage data.", "source": ["exp-shopwave-1"] },
+            { "text": "Launched a bilingual (Traditional Chinese and English) seller app, raising weekly active sellers by 22%.", "source": ["exp-shopwave-2"] },
+            { "text": "Introduced quarterly OKRs and a lightweight PRD template that 4 product teams adopted.", "source": ["exp-shopwave-3"] }
+          ]
+        },
+        {
+          "heading": "Business Analyst",
+          "subheading": "Global Bank Asia",
+          "location": "Hong Kong",
+          "dates": "Jul 2017 – May 2019",
+          "source": ["exp-gba"],
+          "bullets": [
+            { "text": "Gathered requirements from 6 business units and wrote user stories for a mobile banking release used by more than 1 million customers.", "source": ["exp-gba-1"] },
+            { "text": "Automated weekly management reporting with Python, saving 6 analyst hours per week.", "source": ["exp-gba-2"] }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "groups",
+      "title": "Skills",
+      "groups": [
+        { "label": "Product", "items": ["Product roadmap", "Product discovery", "A/B testing", "OKRs"] },
+        { "label": "Data", "items": ["SQL", "Looker", "Python"] },
+        { "label": "Domain", "items": ["Payments", "KYC"] },
+        { "label": "Delivery", "items": ["Agile / Scrum", "Stakeholder management", "Jira", "Figma"] }
+      ]
+    },
+    {
+      "kind": "entries",
+      "title": "Education",
+      "entries": [
+        {
+          "heading": "Bachelor of Business Administration, Information Systems",
+          "subheading": "The University of Hong Kong",
+          "location": "Hong Kong",
+          "dates": "2013 – 2017",
+          "summary": "First Class Honours",
+          "source": ["edu-hku"]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": "Certifications",
+      "items": [{ "text": "Certified Scrum Product Owner (CSPO), Scrum Alliance, 2021", "source": ["cert-cspo"] }]
+    },
+    {
+      "kind": "groups",
+      "title": "Languages",
+      "groups": [{ "items": ["English (fluent)", "Cantonese (native)", "Mandarin (professional working proficiency)"] }]
+    }
+  ]
+}

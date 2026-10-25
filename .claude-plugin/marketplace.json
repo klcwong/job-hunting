@@ -1,0 +1,15 @@
+{
+  "name": "job-hunting",
+  "owner": {
+    "name": "Kelvin Wong",
+    "url": "https://github.com/klcwong"
+  },
+  "description": "Claude Code plugin for ATS-optimized, country-aware CV tailoring.",
+  "plugins": [
+    {
+      "name": "job-hunting",
+      "source": "./",
+      "description": "Build a master career profile, tailor ATS-optimized CVs to each job description for your target country, and keep a history of every tailored CV."
+    }
+  ]
+}
