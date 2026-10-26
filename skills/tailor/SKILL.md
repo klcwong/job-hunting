@@ -32,6 +32,7 @@ User input: $ARGUMENTS
 - Data folder setting: `${user_config.data_dir}`
 - Helper CLI, called `jh` below: `uv run "${CLAUDE_PLUGIN_ROOT}/scripts/jh.py"`. Run it with the Bash tool, or the PowerShell tool on Windows when Bash is unavailable; it prints JSON. If `uv` is missing, tell the user to run `/job-hunting:setup`, which checks the environment and explains the install.
 - Always pass the data folder exactly like this, in single quotes: `--data-dir '${user_config.data_dir}'`.
+- Outside Claude Code (for example in Codex), placeholders that start with `$` in this file are not filled in. If the plugin root above is still a placeholder, the plugin root is the folder two levels above this `SKILL.md`: use that path wherever the placeholder appears. If the data folder setting is still a placeholder, leave out `--data-dir` wherever it would pass that setting; the helper then uses the `JOB_HUNTING_DATA_DIR` environment variable, or `~/job-hunting`. If the user input is still a placeholder, the user input is the user's message. Skills named like `/job-hunting:setup` are invoked in Codex as `$job-hunting:setup`.
 
 Talk to the user in the language they write in. The CV itself is written in the CV language you choose in step 3.
 

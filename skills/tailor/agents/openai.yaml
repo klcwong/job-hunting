@@ -1,0 +1,4 @@
+# Codex skill metadata. Claude Code ignores this file.
+interface:
+  display_name: "Job hunting: tailor"
+  short_description: "Tailor an ATS-optimized CV to one job posting"
