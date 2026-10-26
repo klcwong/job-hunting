@@ -1,0 +1,4 @@
+# Codex skill metadata. Claude Code ignores this file.
+interface:
+  display_name: "Job hunting: CV history"
+  short_description: "Show, update and export your tailored CV history"

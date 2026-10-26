@@ -1,4 +1,4 @@
-# Job Hunting: a Claude Code plugin
+# Job Hunting: a Claude Code and Codex plugin
 
 Tailor an ATS-optimized CV to every job you apply for, following the hiring conventions of the job's country, and keep a history of every CV you send.
 
@@ -7,6 +7,8 @@ Tailor an ATS-optimized CV to every job you apply for, following the hiring conv
 | `/job-hunting:setup [cv.pdf or cv.docx]` | Imports your CV and asks which country or region you are job hunting in. Builds a master profile (`profile.json`) of everything you have done, after a short interview to add missing numbers and skills. |
 | `/job-hunting:tailor <job URL or text>` | Reads the job posting, finds keyword gaps (and asks you about them), and writes a CV for that job from your profile. Renders it to PDF (add `--docx` or `--both` for Word), checks it the way an ATS reads it, and saves it with the job description. |
 | `/job-hunting:cv-history [filter]` | Shows a table of every tailored CV: date and time, role, company, job description, CV file and status. It can update a record's status or export the history to HTML or CSV. |
+
+In Codex, start the command with `$` instead of `/`, for example `$job-hunting:tailor`. See [Use with Codex](#use-with-codex).
 
 ## How it works
 
@@ -17,7 +19,7 @@ Tailor an ATS-optimized CV to every job you apply for, following the hiring conv
 
 ## Requirements
 
-- [Claude Code](https://code.claude.com)
+- [Claude Code](https://code.claude.com) or [Codex](https://developers.openai.com/codex)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/). It installs Python and the plugin's packages (fpdf2, python-docx, pypdf, jsonschema) automatically on first use.
 - Fonts: Arial (Windows and macOS) or Liberation Sans or DejaVu Sans (Linux). Chinese, Japanese and Korean CVs use the system CJK fonts (Microsoft JhengHei or YaHei, Yu Gothic, Malgun Gothic, PingFang, or Noto Sans CJK).
 
@@ -34,6 +36,33 @@ claude plugin install job-hunting@job-hunting
 Or, inside Claude Code: `/plugin marketplace add klcwong/job-hunting`, then `/plugin install job-hunting@job-hunting`.
 
 When you enable the plugin, Claude Code asks for the **data folder**. The default is `~/job-hunting`. Choose a folder you back up. It is not deleted when you uninstall the plugin.
+
+## Use with Codex
+
+The same skills run in Codex. Install the plugin from this repository's marketplace:
+
+```bash
+codex plugin marketplace add klcwong/job-hunting
+```
+
+```bash
+codex plugin add job-hunting@job-hunting
+```
+
+Or run the first command, then install the plugin from `/plugins` inside Codex. Start a new session afterwards. Tested with Codex CLI 0.164. Older versions, such as 0.120, cannot install a plugin that sits at the root of its marketplace repository.
+
+Run the skills as `$job-hunting:setup`, `$job-hunting:tailor <job URL or text>` and `$job-hunting:cv-history`, or describe what you want. Setup only runs when you call it by name.
+
+Differences from Claude Code:
+
+- **Data folder.** Codex does not ask for one when you install the plugin. The plugin uses `~/job-hunting` unless you set the `JOB_HUNTING_DATA_DIR` environment variable, for example in `~/.codex/config.toml`:
+
+  ```toml
+  [shell_environment_policy]
+  set = { JOB_HUNTING_DATA_DIR = "D:/Backup/job-hunting" }
+  ```
+
+- **Approvals.** Codex runs commands in its sandbox. The helper writes to your data folder, `uv` downloads packages on first use, and fetching a job posting needs the network, so Codex asks you to approve those commands, depending on your approval settings. The pre-approved helper commands in the skills apply to Claude Code only.
 
 ## Get started
 
@@ -57,7 +86,7 @@ When you enable the plugin, Claude Code asks for the **data folder**. The defaul
         └── Alex_Chan_ExampleBank_Senior_Product_Manager.pdf
 ```
 
-Everything stays on your computer. Like anything you do in Claude Code, your CV and the job postings are sent to Claude to be processed. The plugin never sends them anywhere else. Formats are documented in [references/data-formats.md](references/data-formats.md).
+Everything stays on your computer. Like anything you do in Claude Code or Codex, your CV and the job postings are sent to the model (Claude, or OpenAI's model in Codex) to be processed. The plugin never sends them anywhere else. Formats are documented in [references/data-formats.md](references/data-formats.md).
 
 ## Limitations
 

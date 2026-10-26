@@ -1,0 +1,7 @@
+# Codex skill metadata. Claude Code ignores this file.
+interface:
+  display_name: "Job hunting: setup"
+  short_description: "Build your master career profile from your CV"
+policy:
+  # Codex counterpart of `disable-model-invocation: true` in SKILL.md: run only when the user asks.
+  allow_implicit_invocation: false
